@@ -1,0 +1,60 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block content %}
+{% load crispy_forms_tags%}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+</head>
+<body>
+    <div class="container rounded bg-white mt-5 border">
+        <div class="row">
+            <div class="col-md-4 border-right">
+                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" src="{{user.profile.image }}" width="90">
+                <h4 class="font-weight-bold">{{user.first_name}}</h4>
+                <span class="text-black-50">{{user.email}}</span>
+                <span>{{user.profile.location}}</span></div>
+            </div>
+            <div class="col-md-8">
+                <div class="p-3 py-5">
+                    <form action="/user/update" method="POST">
+                        {% csrf_token %}
+                    
+                <div class="row mt-2">
+                        <div class="col-md-6"><input type="text" class="form-control" value="{{user.first_name}}" placeholder="last naem"></div>
+                        <div class="col-md-6"><input type="text" class="form-control" value="{{user.last_name}}" placeholder="last naem"></div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-6"><input type="text" class="form-control" placeholder="Email" value="{{user.email}}"></div>
+                        <div class="col-md-6"><input type="text" class="form-control" value="{{user.username}}" placeholder="user name"></div>
+                    </div>
+                    <div class="row mt-3">
+                        
+                        <div class="col-md-6"><input type="text" class="form-control" value="{{user.profile.location}}" placeholder="location"></div>
+                        <div class="col-md-6"><input type="text" class="form-control" value="{{user.profile.image}}" placeholder="Image"></div>
+                    </div>                 
+                   
+                <div class="d-flex justify-content-center" >
+                     <!-- <a class="btn mt-5" href="{% url 'show_profile'  %}" type="button" style="background-color:#acbac3;"> Update Profile
+                </a> -->
+                <button class="btn mt-2" style="background-color:#acbac3;"  type="submit">Update Profile</button>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                        
+                        <h6 class="text-right mt-1"><a href="{% url 'password_change_form' %}">Change Password</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}
+

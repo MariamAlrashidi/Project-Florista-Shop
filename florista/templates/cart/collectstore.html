@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% load crispy_forms_tags%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <section class="testimonial py-5" id="testimonial">
+        <div class="container rounded bg-white mt-5">
+            <div class="row">
+                <div class="col-md-4 py-5 text-white text-center" style="background-color:#ffdde1 ;">
+                    <div class=" ">
+                        <div class="card-body">
+                            <h3 class="py-3">We sell the sign of love</h3>
+                            <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                                style="width:100%">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 py-5 border" style="text-align: center;">
+                    <h3 class="m-b-20 p-b-5 b-b-default f-w-600">Your order is Received</h3>
+                    <br>
+                    <h3>Thank you for shopping with Florista!!</h3>
+​
+                        <h5>We are pleased to inform you that your order has been successfully received by
+                       Florista and is now being processed.</h5>
+                    <br><br>
+                    <h4>Our Location : Saudi Arabi - Riyadh - Nakheel Mall</h4>
+​
+​
+                    <br><br>
+​
+               
+                        <div class="d-flex justify-content-center">
+                            <a href="{%url 'home' %}" class="btn mt-2" style="background-color:#acbac3;"> Continue Shopping</a> 
+                        </div>
+                        
+
+                </div>
+                </form>
+            </div>
+        </div>
+        </div>
+    </section>
+</body>
+
+</html>
+
+
+{% endblock %}

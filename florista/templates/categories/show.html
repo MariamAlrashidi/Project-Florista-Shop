@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+<div class="row mt-5 p-3 justify-content-center
+" style="background-color:white ;">
+<div class="col-md-4">
+    <div class="card text-center">
+        <img class="card-img-top p-3" src="{{one_category.image}}" alt="">
+        <div class="card-body">
+
+            <h4 class="card-title">{{one_category.name}}</h4>
+            </a>
+            <p class="card-text">Price : {{one_category.price}} SAR</p>
+
+            <p class="card-text1">{{one_category.description}}</p>
+        </div>
+    </div>
+</div>
+       
+</div>
+{% endblock  %}
